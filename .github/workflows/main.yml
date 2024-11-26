@@ -8,11 +8,11 @@ on:
     #东八区每小时执行
     #- cron: '40 * * * *'
     #东八区每6小时执行
-    #- cron: '0 2,8,14,20 * * *'
+    - cron: '0 2,8,14,20 * * *'
     #东八区每天5点(utc每天21点)执行
     #- cron: '0 21 * * *'
     #东八区每天3点(utc每天19点)执行
-    - cron: '0 19 * * *'
+    #- cron: '0 19 * * *'
     
     
    workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pip install opencv-python requests 
       - name: Run gengxinsichuanip
-        run: python ${{ github.workspace }}/getplaylist.py
+        run: python ${{ github.workspace }}/tvb.py
 
      
       - name: Commit results
@@ -52,7 +52,7 @@ jobs:
             git config --local user.email "actions@github.com"
             git config --local user.name "GitHub Action"
             if [ -n "$(git status --porcelain)" ]; then
-            git add playlist.json
+            git add playlist.m3u
             git commit -m "Automatic update"
             git push
             else
