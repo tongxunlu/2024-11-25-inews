@@ -5,8 +5,8 @@ import re
 # 发送HTTP请求并获取JSON数据
 url = 'https://inews-api.tvb.com/news/checkout/live/hd/ott_I-NEWS_h264?profile=safari'
 headers = {
-    'CLIENT-IP': '127.0.0.1',
-    'X-FORWARDED-FOR': '127.0.0.1'
+    'CLIENT-IP': '0.0.0.0',
+    'X-FORWARDED-FOR': '0.0.0.0'
 }
 
 response = requests.get(url, headers=headers, verify=False)
