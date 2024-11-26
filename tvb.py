@@ -21,7 +21,7 @@ if response.status_code == 200:
     if hd_url:
         # 使用正则表达式来匹配并替换 URL 中的 `p` 参数
         # 这将匹配形如 "?p=<number>" 或 "&p=<number>" 的部分
-        hd_url = re.sub(r'([?&]p=)\d+', r'\g<1>5500', hd_url)
+        hd_url = re.sub(r'([?&]p=)\d+', r'\g<1>3000', hd_url)
 
         # 生成M3U文件内容
         m3u_content = f"""#EXTM3U url-tvg="https://assets.livednow.com/epg.xml"
